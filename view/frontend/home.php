@@ -319,13 +319,13 @@
                                 <!-- single-product-wrap start -->
                                 <div class="single-product-wrap">
                                     <div class="product-image">
-                                        <a href="http://localhost/staffmanagement/view/frontend/staffDetail.php?id=<?php echo $row['id'];?>">
+                                        <a href="https://wibuweb.herokuapp.com/view/frontend/staffDetail.php?id=<?php echo $row['id'];?>">
                                             <img src="../../Assets/Backend/images/<?php echo $row['img']; ?>" alt="Li's Product Image">
                                         </a>
                                     </div>
                                     <div class="product_desc">
                                         <div class="product_desc_info">
-                                            <h4><a class="product_name" href="http://localhost/staffmanagement/view/frontend/staffDetail.php?id=<?php echo $row['id'];?>"><?php echo $row['name'];?></a></h4>
+                                            <h4><a class="product_name" href="https://wibuweb.herokuapp.com/view/frontend/staffDetail.php?id=<?php echo $row['id'];?>"><?php echo $row['name'];?></a></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -364,13 +364,13 @@
                                 <!-- single-product-wrap start -->
                                 <div class="single-product-wrap">
                                     <div class="product-image">
-                                        <a href="http://localhost/staffmanagement/view/frontend/staffDetail.php?id=<?php echo $row['id'];?>">
+                                        <a href="https://wibuweb.herokuapp.com/view/frontend/staffDetail.php?id=<?php echo $row['id'];?>">
                                             <img src="../../Assets/Backend/images/<?php echo $row['img']; ?>" alt="Li's Product Image">
                                         </a>
                                     </div>
                                     <div class="product_desc">
                                         <div class="product_desc_info">
-                                            <h4><a class="product_name" href="http://localhost/staffmanagement/view/frontend/staffDetail.php?id=<?php echo $row['id'];?>"><?php echo $row['name']; ?></a></h4>
+                                            <h4><a class="product_name" href="https://wibuweb.herokuapp.com/view/frontend/staffDetail.php?id=<?php echo $row['id'];?>"><?php echo $row['name']; ?></a></h4>
                                         </div>
                                     </div>
                                 </div>

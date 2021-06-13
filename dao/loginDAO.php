@@ -14,11 +14,11 @@
 //        print_r($resultSet);
         echo sizeof($resultSet);
         if (sizeof($resultSet) == 1) {
-            header('location:http://localhost/staffmanagement/view/backend/home.php');
+            header('location:https://wibuweb.herokuapp.com/view/backend/home.php');
             echo "ok";
         }
         else {
-            header('location:http://localhost/staffmanagement/view/backend/login.php');
+            header('location:https://wibuweb.herokuapp.com/view/backend/login.php');
         }
     }
     checkLogin();

@@ -14,7 +14,7 @@
 
 <body>
 <?php
-//    header("location:http://localhost/staffmanagement/util/sessionUtil.php");
+//    header("location:https://wibuweb.herokuapp.com/util/sessionUtil.php");
     include "../../util/sessionUtil.php";
 ?>
 <div id="wrapper">

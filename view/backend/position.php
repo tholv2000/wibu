@@ -200,7 +200,7 @@ $(document).ready(function(){
       let length = $("#tableBody tr").size();
 
       $.ajax({
-          url: "http://localhost/staffmanagement/dao/positionDAO.php?action=insert",
+          url: "https://wibuweb.herokuapp.com/dao/positionDAO.php?action=insert",
           method: "POST",
           data: {name:name},
           dataType: "json",
@@ -248,7 +248,7 @@ function del(e) {
         console.log(typeof id);
         console.log(id);
         $.ajax({
-            url: "http://localhost/staffmanagement/dao/positionDAO.php?action=delete",
+            url: "https://wibuweb.herokuapp.com/dao/positionDAO.php?action=delete",
             method: "POST",
             data: {id:id},
             dataType: "json",
@@ -291,7 +291,7 @@ function edit(e) {
     console.log(name);
     console.log(idFirst);
     $.ajax({
-        url: "http://localhost/staffmanagement/dao/positionDAO.php?action=edit",
+        url: "https://wibuweb.herokuapp.com/dao/positionDAO.php?action=edit",
         method: "POST",
         data: {id:idFirst, name: name},
 
@@ -317,7 +317,7 @@ function pagination(p) {
     let activePage = "#page".concat(p);
     console.log(activePage);
     $.ajax({
-       url: "http://localhost/staffmanagement/util/paginationPosUtil.php?page=".concat(p),
+       url: "https://wibuweb.herokuapp.com/util/paginationPosUtil.php?page=".concat(p),
        method: "GET",
        success: function (data) {
            $("#tableBody").html(data);

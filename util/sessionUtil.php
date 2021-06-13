@@ -6,7 +6,7 @@
 
 
         if (isset($_SESSION["email"]) == false) {
-            header('location:http://localhost/staffmanagement/view/backend/login.php');
+            header('location:https://wibuweb.herokuapp.com/view/backend/login.php');
         }
     }
     checkSession();
