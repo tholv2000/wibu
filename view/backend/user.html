@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quản lý nhân viên</title>
+    <link href="../Assets/Backend/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../Assets/Backend/css/sb-admin.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.php">Quản lý nhân viên </a>
+        </div>
+        <!-- navbar-header -->
+        <div class="navbar-default navbar-static-side">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="home.php"><span class="fa fa-home"></span> Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="department.html">Đơn vị</a>
+                    </li>
+                    <li>
+                        <a href="position.php">Chức vụ</a>
+                    </li>
+                    <li>
+                        <a href="level.html">Trình độ</a>
+                    </li>
+                    <li>
+                        <a href="contract.html">Loại hợp đồng</a>
+                    </li>
+                    <li>
+                        <a href="staff.php">Nhân viên </a>
+                    </li>
+                    <li>
+                        <a href="user.html">Tài khoản</a>
+                    </li>
+                    <li>
+                        <a href="login.php">Đăng xuất</a>
+                    </li>
+                </ul>
+                <!-- side-menu -->
+            </div>
+            <!-- sidebar-collapse -->
+        </div>
+        <!-- navbar-static-side -->
+    </nav>
+
+    <div id="page-wrapper" style="padding-top: 20px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- content here -->
+                <div class="col-md-12">
+                    <div class="search">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                            <input id="searchId" type="text" class="form-control" name="search" placeholder="Search..">
+                        </div>
+                    </div>
+                    <div class="panel panel-primary" style="margin-top:20px">
+                        <div class="panel-heading">Danh sách tài khoản</div>
+                        <div class="panel-body">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Tên</th>
+                                        <th>Email</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                    <tr>
+                                        <td>NVA</td>
+                                        <td>a@gmail.com</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal" onclick="edit(this);"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
+                                            <a href="#"><button type="button" class="btn btn-danger" onclick="del(this);"><span class="fa fa-trash"></span></button></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>NVB</td>
+                                        <td>b@gmail.com</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal" onclick="edit(this);"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
+                                            <a href="#"><button type="button" class="btn btn-danger" onclick="del(this);"><span class="fa fa-trash"></span></button></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>NVC</td>
+                                        <td>c@gmail.com</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal" onclick="edit(this);"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
+                                            <a href="#"><button type="button" class="btn btn-danger" onclick="del(this);"><span class="fa fa-trash"></span></button></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Tên:</label>
+                                    <input type="text" class="form-control" placeholder="Nhập tên" id="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    <input type="text" class="form-control" placeholder="Nhập email" id="email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="add();">Thêm</button>
+                    </form>
+                </div>
+                <!-- end content -->
+            </div>
+            <!-- col-lg-12 -->
+        </div>
+        <!-- row -->
+        <div class="modal fade" id="userModal">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog vertical-align-center" style="width:60%">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Sửa loại hợp đồng</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tên:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập tên" id="nameModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập email" id="emailModal" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save(this);">Lưu</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal -->
+    </div>
+    <!-- page-wrapper -->
+
+</div>
+<!-- wrapper -->
+
+<script src="../Assets/Backend/js/jquery-1.10.2.js"></script>
+<script src="../Assets/Backend/js/bootstrap.min.js"></script>
+<script src="../Assets/Backend/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="../Assets/Backend/js/sb-admin.js"></script>
+<script>
+$(document).ready(function(){
+  $("#searchId").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#tableBody tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+function add() {
+    $("#tableBody").append("<tr>" +
+        "<td>" + $("#name").val() + "</td>" +
+        "<td>" + $("#email").val() + "</td>" +
+        "<td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#userModal' onclick='edit(this);'><span class='fa fa-pencil'></span></button>&nbsp;&nbsp; <a href='#'><button type='button' class='btn btn-danger' onclick='del(this);'><span class='fa fa-trash'></span></button></a> </td>");
+
+}
+function del(e) {
+    var confirm = window.confirm("Are you sure ?");
+    if (confirm == true) {
+        $(e).parents("tr").remove();
+    }
+}
+function edit(e) {
+    var row = $(e).parents("tr");
+    var cols = row.children("td");
+    $("#nameModal").val($(cols[0]).text());
+    $("#emailModal").val($(cols[1]).text());
+}
+function save(e) {
+
+}
+</script>
+<script lang="javascript">var __vnp = {code : 5729,key:'', secret : '054acab78a785343c74937f71d68e97d'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>
+</body>
+
+<style>
+.modal {
+}
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.vertical-align-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+   width:inherit;
+   height:inherit;
+   margin: 0 auto;
+}
+</style>
+</html>
